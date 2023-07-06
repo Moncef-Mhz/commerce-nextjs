@@ -1,5 +1,5 @@
 import Nav from "./Nav";
-import Home from "./Home";
+import Homepage from "./Home";
 import Form from "./Form";
 
-export { Nav, Home, Form };
+export { Nav, Homepage, Form };
