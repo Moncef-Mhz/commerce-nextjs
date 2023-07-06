@@ -12,7 +12,7 @@ const ProductSchema = new Schema(
       unique: true,
     },
     image: {
-      type: [String],
+      type: String,
       required: [true, "Image is required"],
     },
     size: {

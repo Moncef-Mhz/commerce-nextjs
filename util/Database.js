@@ -11,7 +11,7 @@ export const connectToDB = async () => {
 
   try {
     await mongoose.connect(process.env.MONGODB, {
-      dbName: "product",
+      dbName: "Product",
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });

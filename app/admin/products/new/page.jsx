@@ -15,54 +15,30 @@ function CreateProduct() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    let Size = size.split(",");
-    let Categories = categories.split(",");
 
     try {
-      const data = {
-        name: name,
-        slug: name,
-        image: image,
-        size: Size,
-        price: price,
-        description: description,
-        categories: Categories,
-        inStock: inStock,
-      };
+      let Size = size.split(",");
+      let Categories = categories.split(",");
+      const response = await fetch("/api/admin/products/new", {
+        method: "POST",
+        body: JSON.stringify({
+          name: name,
+          slug: name,
+          image: image,
+          size: Size,
+          price: price,
+          description: description,
+          categories: Categories,
+          inStock: inStock,
+        }),
+      });
 
-      console.log(
-        JSON.stringify({
-          data,
-        })
-      );
-      axios.post(
-        "/api/admin/products/new",
-        JSON.stringify({
-          data,
-        })
-      );
+      if (response.ok) {
+        console.log("done");
+      }
     } catch (err) {
       console.log(err);
     }
-
-    // try {
-    //   const response = await fetch("/api/admin", {
-    //     method: "POST",
-    //     body: JSON.stringify({
-    //       name: name,
-    //       slug: name,
-    //       image: image,
-    //       size: Size,
-    //       price: price,
-    //       description: description,
-    //       categories: Categories,
-    //       inStock: inStock,
-    //     }),
-    //   });
-    //   console.log(response);
-    // } catch (err) {
-    //   console.log(err);
-    // }
   };
   return (
     <>
