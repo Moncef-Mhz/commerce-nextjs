@@ -34,9 +34,9 @@ function Nav() {
           input.current.focus();
         }}
       >
-        <div className=" flex w-full rounded-md ">
+        <div className=" flex w-full rounded-md">
           <div
-            className="px-2 py-1 cursor-pointer bg-slate-200/30 rounded-l-md"
+            className="px-2 py-2 cursor-pointer bg-slate-200/30 rounded-l-md"
             onClick={() => {}}
           >
             <AiOutlineSearch size={25} className="text-black/40" />
@@ -44,7 +44,7 @@ function Nav() {
           <input
             type="text"
             ref={input}
-            className="outline-none border-none rounded-r-md  bg-slate-200/30  pr-2 py-1"
+            className="outline-none border-none rounded-r-md  bg-slate-200/30  pr-2 py-2 outline-1 border-y-[1px] border-r"
             placeholder="Seacrh..."
             onChange={() => {}}
           />
