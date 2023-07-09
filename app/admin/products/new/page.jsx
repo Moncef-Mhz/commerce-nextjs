@@ -1,7 +1,6 @@
 "use client";
 
 import { Form } from "@components";
-import axios from "axios";
 import React, { useState } from "react";
 
 function CreateProduct() {
@@ -17,13 +16,26 @@ function CreateProduct() {
     e.preventDefault();
 
     try {
+      // if (
+      //   name == "" ||
+      //   image == [] ||
+      //   size == "" ||
+      //   price == "" ||
+      //   description == "" ||
+      //   categories == [] ||
+      //   inStock == ""
+      // ) {
+      //   console.log("you need to fullfil all the champ");
+      // }
       let Size = size.split(",");
       let Categories = categories.split(",");
+      let Slug = name.replace(" ", "-");
+
       const response = await fetch("/api/admin/products/new", {
         method: "POST",
         body: JSON.stringify({
           name: name,
-          slug: name,
+          slug: Slug,
           image: image,
           size: Size,
           price: price,
@@ -33,6 +45,14 @@ function CreateProduct() {
         }),
       });
 
+      setCategories("");
+      setDescription("");
+      setImage("");
+      setInStock("");
+      setName("");
+      setPrice("");
+      setSize("");
+
       if (response.ok) {
         console.log("done");
       }
@@ -40,6 +60,7 @@ function CreateProduct() {
       console.log(err);
     }
   };
+
   return (
     <>
       <form
@@ -56,7 +77,7 @@ function CreateProduct() {
 
         <label htmlFor="">image:</label>
         <input
-          type="file"
+          type="text"
           value={image}
           onChange={(e) => setImage(e.target.value)}
         />

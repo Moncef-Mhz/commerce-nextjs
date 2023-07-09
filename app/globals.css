@@ -13,3 +13,7 @@ input {
   border: 1px solid #000;
   border-radius: 2px;
 }
+
+.app {
+  padding: 0 40px 0 40px;
+}

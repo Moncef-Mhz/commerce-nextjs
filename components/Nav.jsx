@@ -16,7 +16,7 @@ function Nav() {
   const [toggleSearch, settoggleSearch] = useState(false);
 
   return (
-    <nav className="flex flex-row w-full min-h-[75px] items-center justify-between px-10 mb-4">
+    <nav className="flex flex-row w-full min-h-[75px] items-center justify-between  mb-4">
       <Link href="/" className="font-bold text-2xl">
         Moncef-Shop
       </Link>

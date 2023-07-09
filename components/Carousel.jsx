@@ -23,7 +23,10 @@ function Carousel({ data }) {
   };
 
   return (
-    <div className="w-full m-auto relative group shadow-md rounded-md">
+    <div
+      className="w-full m-auto relative group shadow-md rounded-md"
+      key={data.name}
+    >
       <div className="absolute w-full h-full bg-black/70  rounded-md"></div>
       <div
         style={{ backgroundImage: `url(${data[currentIndex].url})` }}
@@ -48,7 +51,7 @@ function Carousel({ data }) {
           <AiOutlineRight size={20} />
         </div>
       </div>
-      <div className="absolute  inset-0 w-full text-2xl md:text-4xl lg:text-7xl flex items-center justify-center  text-white  font-black  z-[7]">
+      <div className="absolute  inset-0 w-full text-2xl md:text-4xl lg:text-7xl flex items-center justify-center  text-white  font-bold  z-[7]">
         <h1 className="text-center">{data[currentIndex].title}</h1>
       </div>
       <div className="absolute flex flex-row bottom-0 gap-4 items-center justify-center w-full mb-14 z-10">
