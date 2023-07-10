@@ -8,7 +8,7 @@ import {
   AiOutlineSearch,
 } from "react-icons/ai";
 
-const navlist = ["Shop", "New arrival", "Men", "Women"];
+const navlist = ["Shop", "Categories", "Men", "Women"];
 
 function Nav() {
   const input = useRef(null);
@@ -23,18 +23,22 @@ function Nav() {
       {/**Desktop menu */}
       <ul className="hidden md:flex gap-8">
         {navlist.map((nav) => (
-          <Link key={nav} href={`/${nav}`} className="text-md font-medium">
+          <Link
+            key={nav}
+            href={`/${nav.toLowerCase()}`}
+            className="text-md font-medium"
+          >
             {nav}
           </Link>
         ))}
       </ul>
-      <div
-        className="flex items-center justify-center gap-3"
-        onClick={() => {
-          input.current.focus();
-        }}
-      >
-        <div className=" flex w-full rounded-md">
+      <div className="flex items-center justify-center gap-3">
+        <div
+          className=" flex w-full rounded-md"
+          onClick={() => {
+            input.current.focus();
+          }}
+        >
           <div
             className="px-2 py-2 cursor-pointer bg-slate-200/30 rounded-l-md"
             onClick={() => {}}
