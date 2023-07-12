@@ -10,11 +10,11 @@ function Product({ data }) {
         <img
           src={data.image}
           alt={data.name}
-          className="object-cover h-[300px] w-[400px] bg-slate-100 rounded-md group-hover:opacity-75"
+          className="object-cover h-[300px] w-full sm:w-[400px] bg-slate-100 rounded-md group-hover:opacity-75 md:w-full"
         />
       </Link>
       <div className="flex justify-between items-center px-1 pb-1">
-        <Link href={data.slug}>
+        <Link href={`/product/${data.slug}`}>
           <div className="flex flex-col mt-1">
             <h1 className="font-semibold">{data.name}</h1>
             <p>{data.price} da</p>
