@@ -1,9 +1,11 @@
 /*eslint-disable @next/next/no-img-element */
+import { useStateContext } from "@context/StateContext";
 import Link from "next/link";
 import React from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 function Product({ data }) {
+  const { onAdd } = useStateContext;
   return (
     <div className="group relative rounded-md">
       <Link href={`/product/${data.slug}`}>

@@ -23,15 +23,15 @@ const CartPage = () => {
     onRemove,
   } = useStateContext();
   return (
-    <div className="cart-wrapper z-[9999]" ref={cartRef}>
+    <div className="w-full z-[9999]" ref={cartRef}>
       <div className="cart-container">
         <button
           type="button"
-          className="cart-heading"
+          className="flex items-center gap-1"
           onClick={() => setShowCart(false)}
         >
           <AiOutlineLeft />
-          <span className="heading">Your Cart&nbsp;</span>
+          <span className="heading">Your Cart</span>
           {cartItems.length < 1 ? (
             <span className=" text-indigo-600">Is Empty</span>
           ) : (
@@ -49,7 +49,7 @@ const CartPage = () => {
               <button
                 type="button"
                 onClick={() => setShowCart(false)}
-                className="btn bg-indigo-600"
+                className="w-full max-w-[400px] px-4 py-3 text-white border-none mt-10 uppercase cursor-pointer hover:scale-110 duration-500 ease-linear bg-indigo-600"
               >
                 Continue Shopping
               </button>
@@ -57,7 +57,7 @@ const CartPage = () => {
           </div>
         )}
 
-        <div className="product-container">
+        <div className="mt-4 overflow-auto max-h-[60vh] px-3 py-5">
           {cartItems.length >= 1
             ? cartItems.map((item) => (
                 <li key={item._id} className="flex py-6">

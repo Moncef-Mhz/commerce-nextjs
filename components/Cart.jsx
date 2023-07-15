@@ -23,8 +23,8 @@ function Cart() {
     onRemove,
   } = useStateContext();
   return (
-    <div className="cart-wrapper z-[9999]" ref={cartRef}>
-      <div className="cart-container">
+    <div className="w-full h-full z-[9999]" ref={cartRef}>
+      <div className="flex">
         <button
           type="button"
           className="cart-heading"
