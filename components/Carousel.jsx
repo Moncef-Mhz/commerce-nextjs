@@ -25,7 +25,7 @@ function Carousel({ data }) {
   return (
     <div
       className="w-full m-auto relative group shadow-md rounded-md"
-      key={data.name}
+      // key={data.name}
     >
       <div className="absolute w-full h-full bg-black/70  rounded-md"></div>
       <div

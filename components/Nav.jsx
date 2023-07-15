@@ -10,19 +10,16 @@ import {
   AiOutlineArrowLeft,
 } from "react-icons/ai";
 import { useStateContext } from "../context/StateContext";
+import Cart from "./Cart";
 
 const navlist = ["Shop", "Categories", "Men", "Women"];
 
 const Nav = () => {
   let { showCart, setShowCart, totalQuantities } = useStateContext();
   const input = useRef(null);
-  const [toggleSearch, settoggleSearch] = useState(false);
+  // const [toggleSearch, settoggleSearch] = useState(false);
   const [toggleMenu, settoggleMenu] = useState(false);
-
-  // const menuHandler = () => {
-  //   setShowCart((prev) => !prev);
-  // };
-  console.log(toggleMenu);
+  console.log(showCart);
   return (
     <nav className="flex flex-row w-full min-h-[75px] items-center justify-between  mb-4 ">
       <Link href="/" className="font-bold text-2xl">
@@ -79,7 +76,7 @@ const Nav = () => {
         </div>
       ) : (
         <>
-          <div className="absolute block lg:hidden w-[50%] h-screen bg-white z-[9999] right-0 top-0 px-4 py-7  overflow-hidden">
+          <div className="absolute block lg:hidden w-[50%] h-screen bg-white z-[8888] right-0 top-0 px-4 py-7  overflow-hidden">
             <div
               className="flex items-center gap-4 mb-5  cursor-pointer"
               onClick={() => settoggleMenu(false)}
@@ -100,7 +97,9 @@ const Nav = () => {
             </ul>
             <div
               className="cursor-pointer flex  w-full justify-start items-center gap-5 border-t pt-4"
-              onClick={() => setShowCart(true)}
+              onClick={() => {
+                setShowCart(true);
+              }}
             >
               <AiOutlineShoppingCart size={40} className="text-black/70" />
               <span className="text-xl font-semibold text-black/70">
@@ -110,7 +109,9 @@ const Nav = () => {
           </div>
           <div
             className="absolute block lg:hidden w-full h-screen bg-black/20 z-[300] right-0 top-0 "
-            onClick={() => settoggleMenu(false)}
+            onClick={() => {
+              settoggleMenu(false);
+            }}
           ></div>
         </>
       )}
